@@ -1,5 +1,5 @@
 class Api::V1::PublishingCompaniesController < ApplicationController
-  before_action :set_publishing_company, only: :show
+  before_action :set_publishing_company, except: :index
 
   def show
 	end
@@ -15,7 +15,21 @@ class Api::V1::PublishingCompaniesController < ApplicationController
 				.paginate(page: params[:page], 
 									per_page: params[:per_page])
 		
-  end
+	end
+	
+	def books
+		params[:page] ||= 1
+		params[:per_page] ||= 10
+
+		@books =	Book
+                .filter(by_title: params[:name],
+                        by_genre: params[:genre],
+                        by_publishing_company: params[:publishing_company],
+                        by_alphabetic_order: params[:order])
+                .where(publishing_company_id: @publishing_company.id)
+                .paginate(page: params[:page], 
+                          per_page: params[:per_page])
+	end
   
   private
 
