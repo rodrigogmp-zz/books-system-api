@@ -1,0 +1,1 @@
+json.array! @publishing_companies, partial: 'publishing_company', as: :publishing_company

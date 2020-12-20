@@ -1,0 +1,1 @@
+json.partial! 'publishing_company', publishing_company: @publishing_company
