@@ -18,4 +18,9 @@ RSpec.describe PublishingCompany, type: :model do
     another = PublishingCompany.new(name: 'Editora Teste')
     expect(another).to_not be_valid
   end
+
+  it 'finds a publishing company record using the name filter' do
+    subject.save
+    PublishingCompany.filter(by_name: 'Editor').count.should be == 1
+  end
 end

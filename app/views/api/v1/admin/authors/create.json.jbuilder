@@ -1,1 +1,1 @@
-json.partial! '../authors/author', author: @author
+json.partial! '/api/v1/authors/author', author: @author

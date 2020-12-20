@@ -18,4 +18,9 @@ RSpec.describe Author, type: :model do
     another = Author.new(name: 'Autor Teste')
     expect(another).to_not be_valid
   end
+
+  it 'finds an author record using the name filter' do
+    subject.save
+    Author.filter(by_name: 'Aut').count.should be == 1
+  end
 end

@@ -18,4 +18,9 @@ RSpec.describe Genre, type: :model do
     another = Genre.new(name: 'Gênero Teste')
     expect(another).to_not be_valid
   end
+
+  it 'finds a genre record using the name filter' do
+    subject.save
+    Genre.filter(by_name: 'Gênero T').count.should be == 1
+  end
 end
