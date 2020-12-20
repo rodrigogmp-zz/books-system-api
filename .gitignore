@@ -1,0 +1,17 @@
+
+/.bundle
+
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+/storage/*
+!/storage/.keep
+/public/uploads
+
+.byebug_history
+
+/config/master.key
+
+/config/database.yml
