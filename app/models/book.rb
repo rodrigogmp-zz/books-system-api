@@ -5,6 +5,7 @@ class Book < ApplicationRecord
   belongs_to :author
   belongs_to :genre
 
+  validates_presence_of :title, :description
   validates_uniqueness_of :title
 
 	scope :by_title, -> (title) {
