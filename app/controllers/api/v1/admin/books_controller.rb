@@ -20,35 +20,27 @@ class Api::V1::Admin::BooksController < ApplicationController
 		@book.destroy
 	end
 
-	def show
-	end
-
-	def index
-		params[:page] ||= 1
-		params[:per_page] ||= 10
-
-    @books = 
-      @publishing_company
-        .books
-        .where(publishing_company_id: params[:publishing_company_id])
-				.filter(by_name: params[:name])
-				.paginate(page: params[:page], 
-									per_page: params[:per_page])
-		
-	end
-
 	private
 
 	def book_params
     params.require(:title)
     params.require(:description)
     params.require(:author_id)
-    params.require(:image)
-		params.permit(:title, :description, :author_id, :image)
-	end
+    params.require(:publishing_company_id)
+    params.require(:genre_id)
+		params.permit(:title, :description, :author_id, :publishing_company_id, :genre_id, :image)
+  end
+  
+  def set_genre
+    @genre = Genre.find(params[:genre_id])
+  end
 
 	def set_publishing_company
 		@publishing_company = PublishingCompany.find(params[:publishing_company_id])
+  end
+
+  def set_author
+    @author = Author.find(params[:author_id])
   end
   
   def set_book

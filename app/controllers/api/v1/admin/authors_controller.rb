@@ -19,21 +19,6 @@ class Api::V1::Admin::AuthorsController < ApplicationController
 		@author.destroy
 	end
 
-	def show
-	end
-
-	def index
-		params[:page] ||= 1
-		params[:per_page] ||= 10
-
-    @authors = 
-      Author
-				.filter(by_name: params[:name])
-				.paginate(page: params[:page], 
-									per_page: params[:per_page])
-		
-	end
-
 	private
 
 	def author_params

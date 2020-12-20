@@ -19,22 +19,6 @@ class Api::V1::Admin::PublishingCompaniesController < ApplicationController
 		@publishing_company.destroy
 	end
 
-	def show
-	end
-
-	def index
-		params[:page] ||= 1
-		params[:per_page] ||= 10
-
-		@publishing_companies = 
-			PublishingCompany
-				.filter(by_name: params[:name],
-								by_alphabetic_order: params[:name])
-				.paginate(page: params[:page], 
-									per_page: params[:per_page])
-		
-	end
-
 	private
 
 	def publishing_company_params
