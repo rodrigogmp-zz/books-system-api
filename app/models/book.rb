@@ -9,5 +9,13 @@ class Book < ApplicationRecord
 
 	scope :by_title, -> (title) {
 		where('title like ?', "%#{title}%")
-	}
+  }
+  
+  scope :by_alphabetic_order, -> (order) {
+    order = order.to_sym
+
+    return unless [:asc, :desc].include? order
+
+    order(title: order)
+  }
 end
