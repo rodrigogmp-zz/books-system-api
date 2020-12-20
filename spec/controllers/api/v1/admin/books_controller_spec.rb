@@ -81,7 +81,7 @@ RSpec.describe Api::V1::Admin::BooksController, type: :controller do
         access_token: login_response.headers['access-token']
       })  
     
-    expect(create_response.code.to_i).should be == 200.to_i
+    expect(create_response.code).to eq(200)
   end
 
 end
