@@ -6,6 +6,8 @@ Rails.application.routes.draw do
         resources :publishing_companies do
           resources :books
         end
+
+        resources :authors
       end
 
       resources :books, only: [:index, :show]

@@ -38,7 +38,7 @@ class Api::V1::Admin::AuthorsController < ApplicationController
 
 	def author_params
     params.require(:name)
-		params.permit(:name)
+		params.permit(:name, :avatar)
   end
   
   def set_author
