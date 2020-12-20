@@ -28,7 +28,8 @@ class Api::V1::Admin::PublishingCompaniesController < ApplicationController
 
 		@publishing_companies = 
 			PublishingCompany
-				.filter(by_name: params[:name])
+				.filter(by_name: params[:name],
+								by_alphabetic_order: params[:name])
 				.paginate(page: params[:page], 
 									per_page: params[:per_page])
 		
