@@ -1,0 +1,1 @@
+json.partial! 'author', publishing_company: @author
