@@ -1,1 +1,1 @@
-json.partial! '../books/book', book: @book
+json.partial! '/api/v1/books/book', book: @book

@@ -1,1 +1,1 @@
-json.array! @books, partial: 'genre', as: :genre
+json.array! @genres, partial: 'genre', as: :genre
