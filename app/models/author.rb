@@ -1,7 +1,7 @@
 class Author < ApplicationRecord
   mount_uploader :avatar, AuthorAvatarUploader
 
-  has_many :books
+  has_many :books, dependent: :destroy
 
   validates_uniqueness_of :name
   validates_presence_of :name

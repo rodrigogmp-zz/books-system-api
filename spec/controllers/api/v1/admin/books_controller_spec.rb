@@ -91,6 +91,30 @@ RSpec.describe Api::V1::Admin::BooksController, type: :controller do
       }
     )
 
+    HTTParty.delete("http://localhost:3000/api/v1/admin/authors/#{author_id}",
+      headers: {
+        client: login_response.headers['client'],
+        uid: login_response.headers['uid'], 
+        access_token: login_response.headers['access-token']
+      }
+    )
+
+    HTTParty.delete("http://localhost:3000/api/v1/admin/genres/#{genre_id}",
+      headers: {
+        client: login_response.headers['client'],
+        uid: login_response.headers['uid'], 
+        access_token: login_response.headers['access-token']
+      }
+    )
+
+    HTTParty.delete("http://localhost:3000/api/v1/admin/publishing_companies/#{publishing_company_id}",
+      headers: {
+        client: login_response.headers['client'],
+        uid: login_response.headers['uid'], 
+        access_token: login_response.headers['access-token']
+      }
+    )
+
     expect(create_response.code).to eq(200)
   end
 
@@ -166,6 +190,30 @@ RSpec.describe Api::V1::Admin::BooksController, type: :controller do
         access_token: login_response.headers['access-token']
       }
     )
+
+    HTTParty.delete("http://localhost:3000/api/v1/admin/authors/#{author_id}",
+      headers: {
+        client: login_response.headers['client'],
+        uid: login_response.headers['uid'], 
+        access_token: login_response.headers['access-token']
+      }
+    )
+
+    HTTParty.delete("http://localhost:3000/api/v1/admin/genres/#{genre_id}",
+      headers: {
+        client: login_response.headers['client'],
+        uid: login_response.headers['uid'], 
+        access_token: login_response.headers['access-token']
+      }
+    )
+
+    HTTParty.delete("http://localhost:3000/api/v1/admin/publishing_companies/#{publishing_company_id}",
+      headers: {
+        client: login_response.headers['client'],
+        uid: login_response.headers['uid'], 
+        access_token: login_response.headers['access-token']
+      }
+    )
       
     expect(update_response.code).to eq(200)
   end
@@ -223,6 +271,30 @@ RSpec.describe Api::V1::Admin::BooksController, type: :controller do
     book_id = JSON.parse(create_response.body)['id']
     
     delete_response = HTTParty.delete("http://localhost:3000/api/v1/admin/books/#{book_id}",
+      headers: {
+        client: login_response.headers['client'],
+        uid: login_response.headers['uid'], 
+        access_token: login_response.headers['access-token']
+      }
+    )
+
+    HTTParty.delete("http://localhost:3000/api/v1/admin/authors/#{author_id}",
+      headers: {
+        client: login_response.headers['client'],
+        uid: login_response.headers['uid'], 
+        access_token: login_response.headers['access-token']
+      }
+    )
+
+    HTTParty.delete("http://localhost:3000/api/v1/admin/genres/#{genre_id}",
+      headers: {
+        client: login_response.headers['client'],
+        uid: login_response.headers['uid'], 
+        access_token: login_response.headers['access-token']
+      }
+    )
+
+    HTTParty.delete("http://localhost:3000/api/v1/admin/publishing_companies/#{publishing_company_id}",
       headers: {
         client: login_response.headers['client'],
         uid: login_response.headers['uid'], 
