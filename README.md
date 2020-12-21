@@ -50,7 +50,7 @@ _Livro_
 3. _Rota Railz_: A rota raiz do projeto, localhost:3000 (rodando localmente) foi mapeada para exibir a listagem de todos os livros.
 4. _Documentação_: A collection (**books-system-api.postman_collection.json**) e o environment (**books-system-api.postman_environment.json**) estão contidos no repositório. Importando-os no postman, é possível testar e realizar todo o fluxo de funcionamento da **API**.
 5. _Endpoints_:
-  1. Privados (acessíveis apenas por administradores)
+  * Privados (acessíveis apenas por administradores)
     * Login
     * Logout
     * Criação, edição e exclusão de editoras.
@@ -58,20 +58,20 @@ _Livro_
     * Criação, edição e exclusão de gêneros.
     * Criação, edição e exclusão de livros.
 
-  2. Públicos (accesíveis por qualquer pessoa)
-    1. Editora
+  * Públicos (accesíveis por qualquer pessoa)
+    * Editora
       * Detalhes
       * Listagem
       * Listagem de livros de uma editora.
-    2. Gênero
+    * Gênero
       * Detalhes
       * Listagem
       * Listagem de livros de um gênero.
-    3. Autor
+    * Autor
       * Detalhes
       * Listagem
       * Listagem de livros de um autor.
-    4. Livros
+    * Livros
       * Detalhes
       * Listagem
     
