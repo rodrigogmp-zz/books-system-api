@@ -1,6 +1,7 @@
 json.id book.id
 json.title book.title
 json.description book.description
+json.image book.image
 json.genre book.genre
 json.author book.author
 json.publishing_company book.publishing_company

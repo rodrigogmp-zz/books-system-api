@@ -12,6 +12,14 @@ class Book < ApplicationRecord
 		where('title like ?', "%#{title}%")
   }
 
+  scope :by_description, -> (description) {
+		where('description like ?', "%#{description}%")
+  }
+
+  scope :by_title_or_description, -> (title_or_description) {
+		where('description like ? or title like ?', "%#{title_or_description}%", "%#{title_or_description}%")
+  }
+
   scope :by_genre, -> (genre) {
     joins(:genre)
 		.where('genres.name like ?', "%#{genre}%")

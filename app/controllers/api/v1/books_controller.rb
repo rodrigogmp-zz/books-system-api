@@ -10,7 +10,9 @@ class Api::V1::BooksController < ApplicationController
 
     @books = 
       Book
-        .filter(by_title: params[:name],
+        .filter(by_title: params[:title],
+                by_description: params[:description],
+                by_title_or_description: params[:title_or_description],
                 by_genre: params[:genre],
                 by_author: params[:author],
                 by_publishing_company: params[:publishing_company],
