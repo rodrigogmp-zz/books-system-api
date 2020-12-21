@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => "api/v1/books#index", :defaults => { :format => 'json' }
   mount_devise_token_auth_for 'Admin', at: 'auth'
   namespace :api do
     namespace :v1 do
