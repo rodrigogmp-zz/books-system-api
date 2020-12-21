@@ -3,7 +3,7 @@ class Api::V1::BooksController < ApplicationController
 
 	def index
 		params[:page] ||= 1
-		params[:per_page] ||= 10
+		params[:per_page] ||= Book.count
 
     @books = 
       Book
