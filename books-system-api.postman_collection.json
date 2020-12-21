@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b7978cb6-00fd-4249-bad0-294a587a9c51",
+		"_postman_id": "aa48fb38-f6bf-4a65-a410-c74ec7eaf741",
 		"name": "books-system-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -63,7 +63,7 @@
 										{
 											"key": "image",
 											"type": "file",
-											"src": "/home/rodrigo/Imagens/pauloCoelho.jpeg"
+											"src": "/home/rodrigo/Imagens/ziraldo.jpeg"
 										}
 									]
 								},
@@ -108,12 +108,12 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "Título",
+											"value": "Título 2",
 											"type": "text"
 										},
 										{
 											"key": "description",
-											"value": "Descrição",
+											"value": "Descrição 3",
 											"type": "text"
 										},
 										{
@@ -176,7 +176,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url_dev}}/api/v1/admin/books/1",
+									"raw": "{{url_dev}}/api/v1/admin/books/51",
 									"host": [
 										"{{url_dev}}"
 									],
@@ -185,7 +185,7 @@
 										"v1",
 										"admin",
 										"books",
-										"1"
+										"51"
 									]
 								}
 							},
@@ -592,7 +592,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"Comédia5\"\n}",
+									"raw": "{\n    \"name\": \"Terror\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -664,9 +664,25 @@
 							"name": "delete",
 							"request": {
 								"method": "DELETE",
-								"header": [],
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
 								"url": {
-									"raw": "{{url_dev}}/api/v1/admin/genres/1",
+									"raw": "{{url_dev}}/api/v1/admin/genres/12",
 									"host": [
 										"{{url_dev}}"
 									],
@@ -675,7 +691,7 @@
 										"v1",
 										"admin",
 										"genres",
-										"1"
+										"12"
 									]
 								}
 							},
@@ -692,26 +708,134 @@
 					"name": "Publishing Companies",
 					"item": [
 						{
-							"name": "Show",
+							"name": "Publish Companies List",
+							"item": [
+								{
+									"name": "without filters",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/publishing_companies",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"publishing_companies"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with name filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/publishing_companies?name=Faber and Faber",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"publishing_companies"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "Faber and Faber"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with asc alphabetic order filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/publishing_companies?order=asc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"publishing_companies"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with desc alphabetic order filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/publishing_companies?order=desc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"publishing_companies"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "desc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with pagination filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/publishing_companies?order=desc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"publishing_companies"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "desc"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Publish Company details",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "client",
-										"value": "{{client}}",
-										"type": "text"
-									},
-									{
-										"key": "uid",
-										"value": "{{uid}}",
-										"type": "text"
-									},
-									{
-										"key": "access-token",
-										"value": "{{access-token}}",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{url_dev}}/api/v1/publishing_companies/10",
 									"host": [
@@ -728,61 +852,12 @@
 							"response": []
 						},
 						{
-							"name": "Index",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "client",
-										"value": "{{client}}",
-										"type": "text"
-									},
-									{
-										"key": "uid",
-										"value": "{{uid}}",
-										"type": "text"
-									},
-									{
-										"key": "access-token",
-										"value": "{{access-token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{url_dev}}/api/v1/publishing_companies?page=1&per_page=1&name=Editora",
-									"host": [
-										"{{url_dev}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"publishing_companies"
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "per_page",
-											"value": "1"
-										},
-										{
-											"key": "name",
-											"value": "Editora"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "books",
+							"name": "Publish Company's books",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url_dev}}/api/v1/publishing_companies/1/books?author=NomeAutor&order=desc",
+									"raw": "{{url_dev}}/api/v1/publishing_companies/1/books",
 									"host": [
 										"{{url_dev}}"
 									],
@@ -792,16 +867,6 @@
 										"publishing_companies",
 										"1",
 										"books"
-									],
-									"query": [
-										{
-											"key": "author",
-											"value": "NomeAutor"
-										},
-										{
-											"key": "order",
-											"value": "desc"
-										}
 									]
 								}
 							},
@@ -813,26 +878,134 @@
 					"name": "Authors",
 					"item": [
 						{
-							"name": "Show",
+							"name": "Authors List",
+							"item": [
+								{
+									"name": "without filters",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/authors",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"authors"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with name filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/authors?name=Marina Skiles",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"authors"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "Marina Skiles"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with asc alphabetic order filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/authors?order=asc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"authors"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with desc alphabetic order filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/authors?order=desc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"authors"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "desc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with pagination filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/authors?order=desc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"authors"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "desc"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Author details",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "client",
-										"value": "{{client}}",
-										"type": "text"
-									},
-									{
-										"key": "uid",
-										"value": "{{uid}}",
-										"type": "text"
-									},
-									{
-										"key": "access-token",
-										"value": "{{access-token}}",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{url_dev}}/api/v1/authors/8",
 									"host": [
@@ -849,60 +1022,7 @@
 							"response": []
 						},
 						{
-							"name": "Index",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "client",
-										"value": "{{client}}",
-										"type": "text"
-									},
-									{
-										"key": "uid",
-										"value": "{{uid}}",
-										"type": "text"
-									},
-									{
-										"key": "access-token",
-										"value": "{{access-token}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{url_dev}}/api/v1/authors?order=asc&name=zi&page=1&per_page=2",
-									"host": [
-										"{{url_dev}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"authors"
-									],
-									"query": [
-										{
-											"key": "order",
-											"value": "asc"
-										},
-										{
-											"key": "name",
-											"value": "zi"
-										},
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "per_page",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "books",
+							"name": "Author's books",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -938,74 +1058,263 @@
 					"name": "Books",
 					"item": [
 						{
-							"name": "index",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "client",
-										"value": "{{client}}",
-										"type": "text"
-									},
-									{
-										"key": "access-token",
-										"value": "{{access-token}}",
-										"type": "text"
-									},
-									{
-										"key": "uid",
-										"value": "{{uid}}",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{url_dev}}/api/v1/books?title_or_description=god&author=alve",
-									"host": [
-										"{{url_dev}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"books"
-									],
-									"query": [
-										{
-											"key": "title_or_description",
-											"value": "god"
-										},
-										{
-											"key": "author",
-											"value": "alve"
+							"name": "Books List",
+							"item": [
+								{
+									"name": "without filters",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											]
 										}
-									]
+									},
+									"response": []
+								},
+								{
+									"name": "with title or description filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books?title_or_description=god",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											],
+											"query": [
+												{
+													"key": "title_or_description",
+													"value": "god"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with title filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books?title=god",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											],
+											"query": [
+												{
+													"key": "title",
+													"value": "god"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with description filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books?description=god",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											],
+											"query": [
+												{
+													"key": "description",
+													"value": "god"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with genre filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books?genre=Mystery",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											],
+											"query": [
+												{
+													"key": "genre",
+													"value": "Mystery"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with author filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books?author=Blair Fahey",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											],
+											"query": [
+												{
+													"key": "author",
+													"value": "Blair Fahey"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with publishing company filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books?publishing_company=Academic Press",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											],
+											"query": [
+												{
+													"key": "publishing_company",
+													"value": "Academic Press"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with asc alphabetic order filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books?order=asc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with desc alphabetic order filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books?order=desc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "desc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with pagination filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/books?page=2&per_page=5",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"books"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "2"
+												},
+												{
+													"key": "per_page",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							]
 						},
 						{
-							"name": "show",
+							"name": "Book details",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "client",
-										"value": "{{client}}",
-										"type": "text",
-										"disabled": true
-									},
-									{
-										"key": "uid",
-										"value": "{{uid}}",
-										"type": "text",
-										"disabled": true
-									},
-									{
-										"key": "access-token",
-										"value": "{{access-token}}",
-										"type": "text",
-										"disabled": true
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{url_dev}}/api/v1/books/1",
 									"host": [
@@ -1027,7 +1336,131 @@
 					"name": "Genres",
 					"item": [
 						{
-							"name": "show",
+							"name": "Genres List",
+							"item": [
+								{
+									"name": "without filters",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/genres",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"genres"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with name filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/genres?name=Legend",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"genres"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "Legend"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with asc alphabetic order filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/genres?order=asc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"genres"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with desc alphabetic order filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/genres?order=desc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"genres"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "desc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with pagination filter",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_dev}}/api/v1/genres?order=desc",
+											"host": [
+												"{{url_dev}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"genres"
+											],
+											"query": [
+												{
+													"key": "order",
+													"value": "desc"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Genre details",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -1047,27 +1480,7 @@
 							"response": []
 						},
 						{
-							"name": "index",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url_dev}}/api/v1/genres/",
-									"host": [
-										"{{url_dev}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"genres",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "books",
+							"name": "Genre's books",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -1100,6 +1513,20 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_dev}}",
+					"host": [
+						"{{url_dev}}"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
