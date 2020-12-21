@@ -1,8 +1,5 @@
 class Api::V1::BooksController < ApplicationController
   before_action :set_book, only: :show
-  
-  def show
-	end
 
 	def index
 		params[:page] ||= 1
@@ -18,7 +15,8 @@ class Api::V1::BooksController < ApplicationController
                 by_publishing_company: params[:publishing_company],
                 by_alphabetic_order: params[:order])
 				.paginate(page: params[:page], 
-									per_page: params[:per_page])
+                  per_page: params[:per_page])
+        .includes(:author, :publishing_company, :genre)
 		
   end
   
