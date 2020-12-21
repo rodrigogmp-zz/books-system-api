@@ -1,0 +1,1105 @@
+{
+	"info": {
+		"_postman_id": "b7978cb6-00fd-4249-bad0-294a587a9c51",
+		"name": "books-system-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Books",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Título",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Descrição",
+											"type": "text"
+										},
+										{
+											"key": "author_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "publishing_company_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "genre_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/rodrigo/Imagens/pauloCoelho.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/books",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Título",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Descrição",
+											"type": "text"
+										},
+										{
+											"key": "author_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "publishing_company_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "genre_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/rodrigo/Imagens/pauloCoelho.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/books/1",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/books/1",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Publishing Companies",
+					"item": [
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/publishing_companies/1",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"publishing_companies",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Editora teste 2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/publishing_companies/1",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"publishing_companies",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Editora Teste 2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/publishing_companies",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"publishing_companies"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (responseCode.code === 200)",
+											"{",
+											"postman.setEnvironmentVariable(\"access-token\", postman.getResponseHeader('access-token'));",
+											"postman.setEnvironmentVariable(\"client\", postman.getResponseHeader('client'));",
+											"postman.setEnvironmentVariable(\"uid\", postman.getResponseHeader('uid'));",
+											"postman.setEnvironmentVariable(\"resource-type\", postman.getResponseHeader('resource-type'));",
+											"}",
+											"",
+											"var responseJSON;",
+											"",
+											"try { responseJSON = JSON.parse(responseBody); }",
+											"catch (e) { }",
+											"",
+											"if ('id' in responseJSON)",
+											"{",
+											"postman.setEnvironmentVariable((postman.getResponseHeader('resource-type') + \"_id\"), responseJSON.id);",
+											"}",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/auth/sign_in",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"auth",
+										"sign_in"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/auth/sign_out",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"auth",
+										"sign_out"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Authors",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Paulo Coelho",
+											"type": "text"
+										},
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/rodrigo/Imagens/pauloCoelho.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/authors",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"authors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Mickey",
+											"type": "text"
+										},
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/rodrigo/Imagens/ziraldo.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/authors/8",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"authors",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/authors/6",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"authors",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Genres",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Comédia5\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/genres",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"genres"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "client",
+										"type": "text",
+										"value": "{{client}}"
+									},
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "{{access-token}}"
+									},
+									{
+										"key": "uid",
+										"type": "text",
+										"value": "{{uid}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Terror\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/genres/1",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"genres",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/admin/genres/1",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"genres",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Publishing Companies",
+					"item": [
+						{
+							"name": "Show",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/publishing_companies/10",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"publishing_companies",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Index",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/publishing_companies?page=1&per_page=1&name=Editora",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"publishing_companies"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "1"
+										},
+										{
+											"key": "name",
+											"value": "Editora"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/publishing_companies/1/books?author=NomeAutor&order=desc",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"publishing_companies",
+										"1",
+										"books"
+									],
+									"query": [
+										{
+											"key": "author",
+											"value": "NomeAutor"
+										},
+										{
+											"key": "order",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Authors",
+					"item": [
+						{
+							"name": "Show",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/authors/8",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"authors",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Index",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/authors?order=asc&name=zi&page=1&per_page=2",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"authors"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "asc"
+										},
+										{
+											"key": "name",
+											"value": "zi"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/authors/1/books?publishing_company=Anova&order=desc",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"authors",
+										"1",
+										"books"
+									],
+									"query": [
+										{
+											"key": "publishing_company",
+											"value": "Anova"
+										},
+										{
+											"key": "order",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Books",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text"
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/books?title_or_description=god&author=alve",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"books"
+									],
+									"query": [
+										{
+											"key": "title_or_description",
+											"value": "god"
+										},
+										{
+											"key": "author",
+											"value": "alve"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "client",
+										"value": "{{client}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "uid",
+										"value": "{{uid}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/books/1",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"books",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Genres",
+					"item": [
+						{
+							"name": "show",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/genres/id",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"genres",
+										"id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/genres/",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"genres",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/genres/1/books?author=NomeAutor&order=desc",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"genres",
+										"1",
+										"books"
+									],
+									"query": [
+										{
+											"key": "author",
+											"value": "NomeAutor"
+										},
+										{
+											"key": "order",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
