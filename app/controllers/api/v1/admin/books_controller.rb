@@ -1,6 +1,5 @@
 class Api::V1::Admin::BooksController < ApplicationController
   before_action :authenticate_admin!
-  before_action :set_publishing_company
   before_action :set_book, except: [:index, :create]
 
 	def create
@@ -16,7 +15,7 @@ class Api::V1::Admin::BooksController < ApplicationController
 		end
 	end
 
-	def destroy
+  def destroy
 		@book.destroy
 	end
 
