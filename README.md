@@ -45,6 +45,34 @@ _Livro_
 
 **Algumas informações sobre a aplicação**
 
-_SGBD_ : MySQL
-_Armazenamento de Arquivos(avatar do autor e imagem do livro)_: São feitos localmente, salvos dentro da pasta public, essa foi alternativa escolhida pelo motivo de não precisar criar uma conta AWS para usar uma alternativa mais viável, como o s3, por exemplo.
-_Rota Railz_: A rota raiz do projeto, localhost:3000 (rodando localmente) foi mapeada para exibir a listagem de todos os livros.
+1. _SGBD_: MySQL
+2. _Armazenamento de Arquivos(avatar do autor e imagem do livro)_: São feitos localmente, salvos dentro da pasta public, essa foi alternativa escolhida pelo motivo de não precisar criar uma conta AWS para usar uma alternativa mais viável, como o s3, por exemplo.
+3. _Rota Railz_: A rota raiz do projeto, localhost:3000 (rodando localmente) foi mapeada para exibir a listagem de todos os livros.
+4. _Documentação_: A collection (**books-system-api.postman_collection.json**) e o environment (**books-system-api.postman_environment.json**) estão contidos no repositório. Importando-os no postman, é possível testar e realizar todo o fluxo de funcionamento da **API**.
+5. _Endpoints_:
+  1. Privados (acessíveis apenas por administradores)
+    * Login
+    * Logout
+    * Criação, edição e exclusão de editoras.
+    * Criação, edição e exclusão de autores.
+    * Criação, edição e exclusão de gêneros.
+    * Criação, edição e exclusão de livros.
+
+  2. Públicos (accesíveis por qualquer pessoa)
+    1. Editora
+      * Detalhes
+      * Listagem
+      * Listagem de livros de uma editora.
+    2. Gênero
+      * Detalhes
+      * Listagem
+      * Listagem de livros de um gênero.
+    3. Autor
+      * Detalhes
+      * Listagem
+      * Listagem de livros de um autor.
+    4. Livros
+      * Detalhes
+      * Listagem
+    
+  * Obs: Todos os endpoints de listagem permitem a utilização de filtros, todos eles estão exemplificados na collection.
