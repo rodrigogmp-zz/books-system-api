@@ -1,24 +1,19 @@
 # README
+**Negrito**
+Sistema de cadastro de Livros
+__Negrito__
+* Instalar a versão 2.7.1 do Ruby (dica: Usar rvm)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Instalar as dependências do projeto (bundle)
 
-Things you may want to cover:
+* Criar o arquivo de configuração do banco de dados config/database.yml copiando o config/database.yml.example
 
-* Ruby version
+* Configurar suas credenciais locais do mysql no database.yml
 
-* System dependencies
+* Preparar o banco de dados (dica: usar rails db:reset, isso irá criar o banco e as tabelas, e também vai popular o banco de dados usando o arquivo seeds.rb)
 
-* Configuration
+* Caso julgue interessante, pode rodar os testes utilizando o rspec (dica: para os testes de controllers, a aplicação precisa estar em execução)
 
-* Database creation
+* Rodar a aplicação (rails s)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##### Algumas informações sobre a aplicação #####
