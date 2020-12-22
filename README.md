@@ -79,4 +79,4 @@ _Livro_
 
   * O arquivo de seeds do projeto realiza o cadastro de um administrador, cujas credenciais estão descritas no endpoint de login, na collection.
 
-  * O **filtro title_or_description** funciona em todos os endpoints de listagem de livros e busca todos os livros em que o título ou descrição correspondam ao texto digitado. Então a cada caractere digitado, o frontend que utilizá-lo conseguirá atualizar a página com o resultado da busca. Esse cenário pode ser simulado via postman, fazendo a requisição sempre que o texto for atualizado.
+  * O **filtro title_or_description** funciona em todos os endpoints de listagem de livros e busca todos os livros em que o título ou descrição correspondam ao texto digitado. Então a cada caractere digitado, o frontend que utilizá-lo conseguirá atualizar a página com o resultado da busca. Esse cenário pode ser simulado via postman, fazendo a requisição sempre que o texto for atualizado. O mesmo serve para todos os outros filtros (autores, gêneros, editoras, etc).
