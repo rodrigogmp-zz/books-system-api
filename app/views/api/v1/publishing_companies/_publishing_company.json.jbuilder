@@ -1,0 +1,5 @@
+json.id publishing_company.id
+json.name publishing_company.name
+json.published_books_amount publishing_company.books.size
+json.created_at publishing_company.created_at
+json.updated_at publishing_company.updated_at
