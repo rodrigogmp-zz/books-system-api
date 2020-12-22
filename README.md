@@ -46,7 +46,7 @@ _Livro_
 **Algumas informações sobre a aplicação**
 
 1. _SGBD_: MySQL
-2. _Armazenamento de Arquivos(avatar do autor e imagem do livro)_: São feitos localmente, salvos dentro da pasta public, essa foi a alternativa escolhida pelo motivo de não precisar criar uma conta AWS para usar uma alternativa mais viável como o s3, por exemplo.
+2. _Armazenamento de Arquivos(avatar do autor e imagem do livro)_: São feitos localmente, salvos dentro da pasta public, essa foi a alternativa escolhida pelo motivo de não precisar criar uma conta AWS para usar uma alternativa mais viável como o s3, por exemplo. Obs: os campos image (imagem) do livro e avatar do autor que foram gerados pelo seed não estão preenchidos, porque a gem **Faker** gera uma url para a imagem, enquanto que a aplicação espera um arquivo. Mas todos os endpoints que usam input de arquivos estão funcionando normalmente.
 3. _Rota Railz_: A rota raiz do projeto, localhost:3000 (rodando localmente) foi mapeada para exibir a listagem de todos os livros.
 4. _Documentação_: A collection (**books-system-api.postman_collection.json**) e o environment (**books-system-api.postman_environment.json**) estão contidos no repositório. Importando-os no postman, é possível testar e realizar todo o fluxo de funcionamento da **API**.
 5. _Endpoints_:
