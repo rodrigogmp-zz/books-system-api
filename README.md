@@ -17,25 +17,25 @@
 **Regras de negócio**
 
 _Editora_
-1. Model : publishing_company.rb 
-2. Tem como único atributo o nome (name), sendo obrigatório.
-3. Tem uma relação 1 para N com livros (book.rb)
+* Model : publishing_company.rb 
+* Tem como único atributo o nome (name), sendo obrigatório.
+* Tem uma relação 1 para N com livros (book.rb)
 
 _Gênero_
-1. Model : genre.rb
-2. Tem como único atributo o nome (name), sendo obrigatório.
-3. Tem uma relação 1 para N com livros (book.rb)
+* Model : genre.rb
+* Tem como único atributo o nome (name), sendo obrigatório.
+* Tem uma relação 1 para N com livros (book.rb)
 
 _Autor_
-1. Model: author.rb
-2. Tem como único atributos:
+* Model: author.rb
+* Tem como único atributos:
   * Nome (name): obrigatório
   * Imagem (avatar): opcional
-3. Tem uma relação 1 para N com livros (book.rb)
+* Tem uma relação 1 para N com livros (book.rb)
 
 _Livro_
-1. Model: book.rb
-2. Tem como atributos:
+* Model: book.rb
+* Tem como atributos:
   * Título (title): obrigatório
   * Descrição (description): obrigatório
   * Id do autor (author_id): obrigatório
