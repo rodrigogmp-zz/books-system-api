@@ -1,12 +1,13 @@
 class Api::V1::Admin::BooksController < Api::V1::Admin::BaseController
   before_action :set_book, except: [:index, :create]
 
-	def create
-		@book = Book.create!(book_params)
+  def create
+    @book = BookServices::Create.call(params: create_book_params)
 	end
 
 	def update
-		@book.update!(book_params)
+    # @book.update!(book_params)
+    @book = BookServices::Update.call(params: update_book_params, book: @book)
 	end
 
   def destroy
@@ -15,7 +16,7 @@ class Api::V1::Admin::BooksController < Api::V1::Admin::BaseController
 
 	private
 
-	def book_params
+  def create_book_params
     require_parameters(parameters: 
                         [
                           :title, 
@@ -26,6 +27,10 @@ class Api::V1::Admin::BooksController < Api::V1::Admin::BaseController
                         ]
                       )
 		params.permit(:title, :description, :author_id, :publishing_company_id, :genre_id, :image)
+  end
+
+  def update_book_params
+    params.permit(:title, :description, :author_id, :publishing_company_id, :genre_id, :image)
   end
   
   def set_genre

@@ -17,7 +17,7 @@ class Api::V1::GenresController < ApplicationController
 		params[:page] ||= 1
 		params[:per_page] ||= 10
 
-		@books = BooksFilter.call(class_instance: @genre, params: params)
+		@books = BookServices::Filter.call(class_instance: @genre, params: params)
 	end
   
   private

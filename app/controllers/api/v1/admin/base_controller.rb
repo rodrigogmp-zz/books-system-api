@@ -3,7 +3,6 @@ class Api::V1::Admin::BaseController < ApplicationController
   before_action :authenticate_admin!
 
   def require_parameters(parameters:)
-    byebug
     parameters.each do |param|
       params.require(param)
     end

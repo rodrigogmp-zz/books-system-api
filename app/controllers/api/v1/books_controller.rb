@@ -5,7 +5,7 @@ class Api::V1::BooksController < ApplicationController
 		params[:page] ||= 1
     params[:per_page] ||= 10
     
-    @books = BooksFilter.call(params: params)
+    @books = BookServices::Filter.call(params: params)
   end
   
   private
