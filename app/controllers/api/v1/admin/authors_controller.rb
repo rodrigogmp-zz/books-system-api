@@ -1,18 +1,12 @@
-class Api::V1::Admin::AuthorsController < ApplicationController
-  before_action :authenticate_admin!
+class Api::V1::Admin::AuthorsController < Api::V1::Admin::BaseController
   before_action :set_author, except: [:index, :create]
 
 	def create
-		@author = Author.create(author_params)
-		if @author.errors.any?
-			return render json: { errors: @author.errors.full_messages }, status: :unprocessable_entity
-		end
+		@author = Author.create!(author_params)
 	end
 
 	def update
-		unless @author.update(author_params)
-			return render json: { errors: @author.errors.full_messages }, status: :unprocessable_entity
-		end
+		@author.update!(author_params)
 	end
 
 	def destroy

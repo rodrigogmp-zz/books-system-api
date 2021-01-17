@@ -1,18 +1,12 @@
-class Api::V1::Admin::GenresController < ApplicationController
-  before_action :authenticate_admin!
+class Api::V1::Admin::GenresController < Api::V1::Admin::BaseController
 	before_action :set_genre, except: [:index, :create]
 
 	def create
-		@genre = Genre.create(genre_params)
-		if @genre.errors.any?
-			return render json: { errors: @genre.errors.full_messages }, status: :unprocessable_entity
-		end
+		@genre = Genre.create!(genre_params)
 	end
 
 	def update
-		unless @genre.update(genre_params)
-			return render json: { errors: @genre.errors.full_messages }, status: :unprocessable_entity
-		end
+		@genre.update!(genre_params)
 	end
 
 	def destroy

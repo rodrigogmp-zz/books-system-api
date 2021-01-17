@@ -1,18 +1,12 @@
-class Api::V1::Admin::BooksController < ApplicationController
-  before_action :authenticate_admin!
+class Api::V1::Admin::BooksController < Api::V1::Admin::BaseController
   before_action :set_book, except: [:index, :create]
 
 	def create
-		@book = Book.create(book_params)
-		if @book.errors.any?
-			return render json: { errors: @book.errors.full_messages }, status: :unprocessable_entity
-		end
+		@book = Book.create!(book_params)
 	end
 
 	def update
-		unless @book.update(book_params)
-			return render json: { errors: @book.errors.full_messages }, status: :unprocessable_entity
-		end
+		@book.update!(book_params)
 	end
 
   def destroy
@@ -22,11 +16,15 @@ class Api::V1::Admin::BooksController < ApplicationController
 	private
 
 	def book_params
-    params.require(:title)
-    params.require(:description)
-    params.require(:author_id)
-    params.require(:publishing_company_id)
-    params.require(:genre_id)
+    require_parameters(parameters: 
+                        [
+                          :title, 
+                          :description, 
+                          :author_id, 
+                          :publishing_company_id, 
+                          :genre_id
+                        ]
+                      )
 		params.permit(:title, :description, :author_id, :publishing_company_id, :genre_id, :image)
   end
   
